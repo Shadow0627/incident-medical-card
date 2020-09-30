@@ -5,6 +5,7 @@ body {
   font-family: ubuntu;
   font-size: 1vw;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .main-head-log {

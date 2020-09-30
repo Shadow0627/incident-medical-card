@@ -10,3 +10,4 @@
     <input type="submit" value="Zaloguj!" name="login">
 </form>
 <?php include 'footer.php'; ?>
+
