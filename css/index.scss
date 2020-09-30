@@ -10,6 +10,7 @@ body
     color: $color;
     font-family: $font;
     font-size: 1vw;
+    overflow-x: hidden;
 }
 
 .main-head-log
@@ -27,15 +28,46 @@ body
 .main-form-log
 {
     width: 60%;
-    height: 10vh;
+    height: 20vh;
     background-color: $divbgcolor;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 20%;
+    border: 5px solid black;
+    border-radius: 50px 0px 50px 0px;
+    margin-top: 10vh;
+    box-shadow: 1vh 2vh 2vh black;
+    label
+    {
+        margin-top: 2vh;
+    }
+    input
+    {
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 10px 10px 10px 10px;
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+}
+
+footer
+{
+    width: 100%;
+    margin-top: 50vh;
+    background-color: $divbgcolor;
+    color:$color;
+    height: 10vh;
+    border-top: 5px solid black;
+    border-radius: 50px 50px 0px 0px;
+    box-shadow: 0vh -1vh 2vh black;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: space-around;
-    margin-left: 20%;
-    border: 5px solid black;
-    border-radius: 0px 50px 0px 50px;
-    margin-top: 10vh;
-    box-shadow: 1vh 2vh 2vh black;
+    align-content: space-around;    
 }
