@@ -26,4 +26,5 @@ Made by Piotr Porwit
 
 
 WWW Documentation: https://docs.google.com/document/d/1_sDOS8JDc7wK07O4ZloNtRsqjTuAktATOiOqrA4hpIU/edit?usp=sharing <br>
-ERD: https://docs.google.com/document/d/1fypryLvDIn1ygM8zIi9QnxPiK2M15Cf5ct9SkkQbMO8/edit?usp=sharing
+ERD: https://docs.google.com/document/d/1fypryLvDIn1ygM8zIi9QnxPiK2M15Cf5ct9SkkQbMO8/edit?usp=sharing<br>
+Front-end documentation: https://docs.google.com/document/d/1EoT4F6asxKW057t4FNw5Acz5RaOqpj2T6wcrPdyVAao/edit?usp=sharing
