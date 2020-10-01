@@ -2,6 +2,8 @@ $font: ubuntu;
 $divbgcolor: #00ccff;
 $color: #000000;
 $bodybgcolor: #ffffff;
+$border: 5px solid black;
+$shadow: 1vh 2vh 2vh black;
 
 body
 {
@@ -71,4 +73,53 @@ footer
     justify-content: center;
     align-items: center;
     align-content: space-around;    
+}
+
+.inci-header
+{
+    background-color: $divbgcolor;
+    color: $color;
+    height: 10vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 95%;
+    box-shadow: 1vh 2vh 2vh black;
+    border-radius: 0px 0px 50px 50px;
+    border-bottom: $border;
+    .inci-logo
+    {
+        text-align: right;
+        width: 100%;
+    }
+    ul
+    {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        a{
+            color: $color;
+            text-decoration: none;
+        }
+    }
+}
+.inci-logout
+{
+    width: 100%;
+    background-color: $divbgcolor;
+    border-top:$border ;
+    border-bottom: $border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    margin-top: 15vh;
+    box-shadow: $shadow;
+    input{
+        border: $border;
+        background-color: $bodybgcolor;
+        color: $color;
+        font-size: larger;
+        padding: 1rem;
+    }
 }

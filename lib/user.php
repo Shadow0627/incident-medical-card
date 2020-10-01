@@ -22,10 +22,19 @@ class User
                 $_SESSION['Name'] = $row ->NAME;
                 $_SESSION['Lastname'] = $row->LAME;
                 $_SESSION['confirm'] = 'start';
+                $_SESSION['error'] = "Zalogowano!";
             }
             return true;
         } else {
+            $_SESSION['error'] = "Błędne hasło lub login.";
             return false;
         }
+    }
+    public function logout()
+    {
+        session_unset();
+        session_destroy();
+        $_SESSION['error'] = 'Wylogowano!';
+        Header('refresh:0');
     }
 }

@@ -81,4 +81,69 @@ footer {
   -ms-flex-line-pack: distribute;
       align-content: space-around;
 }
+
+.inci-header {
+  background-color: #00ccff;
+  color: #000000;
+  height: 10vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 95%;
+      grid-template-columns: 5% 95%;
+  -webkit-box-shadow: 1vh 2vh 2vh black;
+          box-shadow: 1vh 2vh 2vh black;
+  border-radius: 0px 0px 50px 50px;
+  border-bottom: 5px solid black;
+}
+
+.inci-header .inci-logo {
+  text-align: right;
+  width: 100%;
+}
+
+.inci-header ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.inci-header ul a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.inci-logout {
+  width: 100%;
+  background-color: #00ccff;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 10vh;
+  margin-top: 15vh;
+  -webkit-box-shadow: 1vh 2vh 2vh black;
+          box-shadow: 1vh 2vh 2vh black;
+}
+
+.inci-logout input {
+  border: 5px solid black;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: larger;
+  padding: 1rem;
+}
 /*# sourceMappingURL=index.css.map */
