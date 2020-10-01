@@ -12,3 +12,7 @@ alert("'. $_SESSION["error"] .'");'
 })
 
 </script>
+<?php if(isset($_SESSION['userId']))
+{
+    include 'helpers/ip.php';
+}

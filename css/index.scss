@@ -123,3 +123,34 @@ footer
         padding: 1rem;
     }
 }
+
+.inci-add
+{
+    width: 100%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 10vh;
+    border-top: $border;
+    border-bottom: $border;
+    box-shadow: $shadow;
+    background-color: $divbgcolor;
+    color: $color;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    input
+    {
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 10px 10px 10px 10px;
+        text-align: center;
+        margin-top: 2vh;
+    }
+}
+}

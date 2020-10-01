@@ -37,4 +37,14 @@ class User
         $_SESSION['error'] = 'Wylogowano!';
         Header('refresh:0');
     }
+    public function ip($ip)
+    {
+        $query ='UPDATE USER
+        SET IPUS= :ip
+        WHERE IDUS = :id ';
+        $this->db->query($query);
+        $this->db->bind(':ip', $ip);
+        $this->db->bind(':id', $_SESSION['userId']);
+        $this->db->execute();
+    }
 }
