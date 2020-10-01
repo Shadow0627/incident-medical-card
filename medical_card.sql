@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 30 Wrz 2020, 12:53
+-- Czas generowania: 01 Paź 2020, 14:24
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.10
 
@@ -118,6 +118,13 @@ CREATE TABLE `mest` (
   `IDUS` int(11) NOT NULL COMMENT 'ID USER'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Zrzut danych tabeli `mest`
+--
+
+INSERT INTO `mest` (`IDME`, `NAME`, `LAME`, `LOME`, `IDQU`, `IDUS`) VALUES
+(1, 'Piotr', 'Porwit', 'Gryfino', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -156,6 +163,14 @@ CREATE TABLE `qual` (
   `IDQU` int(11) NOT NULL COMMENT 'ID QUALIFICATION',
   `NAQU` varchar(255) NOT NULL COMMENT 'NAME OF QUALIFICAION'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `qual`
+--
+
+INSERT INTO `qual` (`IDQU`, `NAQU`) VALUES
+(1, 'Ratownik KPP'),
+(2, 'Ratownik medyczny');
 
 -- --------------------------------------------------------
 
@@ -237,12 +252,18 @@ CREATE TABLE `user` (
   `LOUS` varchar(32) NOT NULL COMMENT 'LOGIN USER',
   `PAUS` varchar(128) NOT NULL COMMENT 'PASSWORD USER',
   `EMUS` varchar(128) NOT NULL COMMENT 'EMAIL USER',
-  `IPUS` varchar(9) NOT NULL COMMENT 'IP USER',
+  `IPUS` varchar(13) NOT NULL COMMENT 'IP USER',
   `PEUS` int(5) NOT NULL COMMENT 'PERMISSION USER',
   `JDUS` date NOT NULL COMMENT 'JOIN DATE USER',
-  `POUS` int(1) NOT NULL COMMENT 'POLICY ACCEPT USER',
-  `ADUS` int(11) NOT NULL COMMENT 'ADDED BY USER'
+  `POUS` int(1) NOT NULL COMMENT 'POLICY ACCEPT USER'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `user`
+--
+
+INSERT INTO `user` (`IDUS`, `LOUS`, `PAUS`, `EMUS`, `IPUS`, `PEUS`, `JDUS`, `POUS`) VALUES
+(1, 'shadow0627', 'fa6863b13a4aff467e7ab0de90beb52e63525e2b', 'piorom12@gmail.com', '192.168.1', 15, '2020-10-01', 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -397,7 +418,7 @@ ALTER TABLE `medi`
 -- AUTO_INCREMENT dla tabeli `mest`
 --
 ALTER TABLE `mest`
-  MODIFY `IDME` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID MED STUFF';
+  MODIFY `IDME` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID MED STUFF', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `note`
@@ -409,7 +430,7 @@ ALTER TABLE `note`
 -- AUTO_INCREMENT dla tabeli `qual`
 --
 ALTER TABLE `qual`
-  MODIFY `IDQU` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID QUALIFICATION';
+  MODIFY `IDQU` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID QUALIFICATION', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `sale`
@@ -451,7 +472,7 @@ ALTER TABLE `uote`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `IDUS` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID USER';
+  MODIFY `IDUS` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID USER', AUTO_INCREMENT=2;
 
 --
 -- Ograniczenia dla zrzutów tabel
