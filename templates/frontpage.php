@@ -11,3 +11,19 @@
 </form>
 <?php include 'footer.php'; ?>
 
+<?php
+if(isset($_POST['login']))
+{
+    if(isset($_POST['name']) && isset($_POST['password']))
+    {
+        $dane = array();
+        $dane['login'] = $_POST['name'];
+        $dane['pass'] = $_POST['password'];
+        if($user->loginuser($dane) == true)
+        {
+            header('Location: /addinci.php');
+        }
+        
+    }
+}
+ ?>
