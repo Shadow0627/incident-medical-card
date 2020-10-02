@@ -46,10 +46,6 @@ body {
           box-shadow: 1vh 2vh 2vh black;
 }
 
-.main-form-log label {
-  margin-top: 2vh;
-}
-
 .main-form-log input {
   background-color: white;
   color: black;
@@ -57,6 +53,7 @@ body {
   border-radius: 10px 10px 10px 10px;
   text-align: center;
   margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 footer {

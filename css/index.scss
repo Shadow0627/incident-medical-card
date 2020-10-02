@@ -43,10 +43,6 @@ body
     border-radius: 50px 0px 50px 0px;
     margin-top: 10vh;
     box-shadow: 1vh 2vh 2vh black;
-    label
-    {
-        margin-top: 2vh;
-    }
     input
     {
         background-color: white;
@@ -55,6 +51,7 @@ body
         border-radius: 10px 10px 10px 10px;
         text-align: center;
         margin-top: 2vh;
+        margin-bottom: 2vh;
     }
 
 }
