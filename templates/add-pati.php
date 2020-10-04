@@ -1,19 +1,19 @@
 <form method="post">
         <h1>Dane pacjenta</h1>
         <label for="napa">Imię pacjenta:</label>
-        <input type="text" name="napa" id="napa" required>
+        <input type="text" name="napa" id="napa" required value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>">
         <label for="lapa">Nazwisko pacjenta:</label>
-        <input type="text" name="lapa" id="lapa" require>
+        <input type="text" name="lapa" id="lapa" require value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>">
         <label for="pnpa">Numer telefonu:</label>
-        <input type="text" name="pnpa" id="pnpa">
+        <input type="text" name="pnpa" id="pnpa" value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>">
         <label for="empa">Email pacjenta:</label>
-        <input type="email" name="empa" id="empa">
+        <input type="email" name="empa" id="empa" value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>">
         <label for="cipa">Miasto: </label>
-        <input type="text" name="cipa" id="cipa">
+        <input type="text" name="cipa" id="cipa" value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>" required>
         <label for="zcpa">Kod pocztowy:</label>
-        <input type="text" name="zcpa" id="zcpa">
+        <input type="text" name="zcpa" id="zcpa" value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>" required>
         <label for="snpa">Ulica i numer domu:</label>
-        <input type="text" name="snpa" id="snpa" required>
+        <input type="text" name="snpa" id="snpa" required value="<?php if(isset($_SESSION[''])){ echo $_SESSION[''];}?>">
         <input type="submit" value="Zapisz!" name="pati">
     </form>
     
