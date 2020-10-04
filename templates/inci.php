@@ -15,6 +15,7 @@
 <?php include 'templates/add-sample.php';?>
 <?php include 'templates/add-trauma.php';?>
 <?php include 'templates/add-notes.php'; ?>
+<form method="post"><input  class="save-all-bt" type="submit" value="Wyślij do bazy!" name="end-form-add-inci"></form>
 </div>
 <div id="logout" class="inci-logout">
     <form method="post">

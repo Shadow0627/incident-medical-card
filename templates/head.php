@@ -14,5 +14,6 @@
     <link rel="shortcut icon" href="/public/ico/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="/public/ico/avicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <script src="/js/add-inci.js"></script>
 </head>
 <body>

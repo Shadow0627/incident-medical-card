@@ -149,5 +149,15 @@ footer
         text-align: center;
         margin-top: 2vh;
     }
+    .save-all-bt
+    {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: red;
+        border: $border;
+        color: $color;
+        
+    }
 }
 }

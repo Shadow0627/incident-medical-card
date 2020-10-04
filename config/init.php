@@ -8,3 +8,4 @@ function __autoload($class_name)
 }
 
 $user = new User;
+$inci = new Inci;
