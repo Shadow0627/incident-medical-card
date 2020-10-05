@@ -36,6 +36,14 @@ if(isset($_POST['pati']))
     $_SESSION['cipa'] = trim($_POST['cipa']);
     $_SESSION['zcpa'] = trim($_POST['zcpa']);
     $_SESSION['snpa'] = trim($_POST['snpa']);
+    $pati = array();
+    $pati['napa']= $_SESSION['napa'];
+    $pati['lapa'] = $_SESSION['lapa'];
+    $pati['pnpa'] = $_SESSION['pnpa'];
+    $pati['empa'] = $_SESSION['empa'];
+    $pati['cipa'] = $_SESSION['cipa'];
+    $pati['zcpa'] = $_SESSION['zcpa'];
+    $pati['snpa'] = $_SESSION['snpa'];
 }
 if(isset($_POST['sample']))
 {
@@ -53,6 +61,13 @@ if(isset($_POST['sample']))
     $regl['eye'] = $_SESSION['eye'];
     $regl['voice'] = $_SESSION['voice'];
     $regl['move'] = $_SESSION['move'];
+    $sale = array();
+    $sale['s'] = $_SESSION['s'];
+    $sale['a'] = $_SESSION['a'];
+    $sale['m'] = $_SESSION['m'];
+    $sale['p'] = $_SESSION['p'];
+    $sale['l'] = $_SESSION['l'];
+    $sale['e'] = $_SESSION['e'];
 }
 if(isset($_POST['trauma']))
 {
@@ -65,7 +80,7 @@ if(isset($_POST['trauma']))
 }
 if(isset($_POST['end-form-add-inci']))
 {
-    if(isset($exco) && isset($regl) && isset($loti) && isset($medi) && isset($note))
+    if(isset($exco) && isset($regl) && isset($loti) && isset($medi) && isset($note) && isset($pati) && isset($sale))
     {
     }
 }
