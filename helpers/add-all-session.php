@@ -1,7 +1,8 @@
 <?php
+$suma = 0;
 if(isset($_POST['exit']))
 {
-
+$suma += 1;
     $_SESSION['exco'] = trim($_POST['exco']);
     $_SESSION['cilo'] = trim($_POST['cilo']);
     $_SESSION['zclo'] = trim($_POST['zclo']);
@@ -18,10 +19,22 @@ if(isset($_POST['exit']))
     $loti['cilo'] = $_SESSION['cilo'];
     $loti['zclo'] = $_SESSION['zclo'];
     $loti['stlo'] = $_SESSION['stlo'];
+    $tdon = array();
+    $tdon['ddtd'] = $_SESSION['ddtd'];
+    $tdon['artd'] = $_SESSION['artd'];
+    $tdon['bbtd'] = $_SESSION['bbtd'];
+    $toca = array();
+    $toca['nato'] = $_SESSION['nato'];
+    $toin = array();
+    $toin['tona'] = $_SESSION['tona'];
+    $uote = array();
+    $uote['nauo'] = $_SESSION['nauo'];
+
 
 }
 if(isset($_POST['Note']))
 {
+    $suma += 1;
     $_SESSION['cono'] = trim($_POST['cono']);
     $note = array();
     $note['cono'] = $_SESSION['cono'];
@@ -29,6 +42,7 @@ if(isset($_POST['Note']))
 }
 if(isset($_POST['pati']))
 {
+    $suma += 1;
     $_SESSION['napa'] = trim($_POST['napa']);
     $_SESSION['lapa'] = trim($_POST['lapa']);
     $_SESSION['pnpa'] = trim($_POST['pnpa']);
@@ -47,7 +61,7 @@ if(isset($_POST['pati']))
 }
 if(isset($_POST['sample']))
 {
-
+    $suma += 1;
     $_SESSION['s'] = trim($_POST['s']);
     $_SESSION['a'] = trim($_POST['a']);
     $_SESSION['m'] = trim($_POST['m']);
@@ -71,16 +85,27 @@ if(isset($_POST['sample']))
 }
 if(isset($_POST['trauma']))
 {
-  
+    $suma += 1;
     $_SESSION['natr'] = trim($_POST['natr']);
     $_SESSION['nami'] = trim($_POST['nami']);
     $medi = array();
     $medi['nami'] = $_SESSION['nami'];
+    $trau = array();
+    $trau['natr'] = $_SESSION['natr'];
    
 }
 if(isset($_POST['end-form-add-inci']))
 {
-    if(isset($exco) && isset($regl) && isset($loti) && isset($medi) && isset($note) && isset($pati) && isset($sale))
+    if($suma == 5)
     {
+        $inci->add($exco, $glcs, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote);
     }
+    else
+    {
+        echo 'dupa ze wsio';
+    }
+}
+else
+{
+    echo 'dupa z postem';   
 }
