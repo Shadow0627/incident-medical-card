@@ -1,8 +1,7 @@
 <?php
-$suma = 0;
+
 if(isset($_POST['exit']))
 {
-$suma += 1;
     $_SESSION['exco'] = trim($_POST['exco']);
     $_SESSION['cilo'] = trim($_POST['cilo']);
     $_SESSION['zclo'] = trim($_POST['zclo']);
@@ -29,20 +28,19 @@ $suma += 1;
     $toin['tona'] = $_SESSION['tona'];
     $uote = array();
     $uote['nauo'] = $_SESSION['nauo'];
-
+    print_r($uote, $toni, $toca, $tdon, $loti, $exco);
 
 }
 if(isset($_POST['Note']))
 {
-    $suma += 1;
     $_SESSION['cono'] = trim($_POST['cono']);
     $note = array();
     $note['cono'] = $_SESSION['cono'];
+    print_r($note);
 
 }
 if(isset($_POST['pati']))
 {
-    $suma += 1;
     $_SESSION['napa'] = trim($_POST['napa']);
     $_SESSION['lapa'] = trim($_POST['lapa']);
     $_SESSION['pnpa'] = trim($_POST['pnpa']);
@@ -58,10 +56,10 @@ if(isset($_POST['pati']))
     $pati['cipa'] = $_SESSION['cipa'];
     $pati['zcpa'] = $_SESSION['zcpa'];
     $pati['snpa'] = $_SESSION['snpa'];
+    print_r($pati);
 }
 if(isset($_POST['sample']))
 {
-    $suma += 1;
     $_SESSION['s'] = trim($_POST['s']);
     $_SESSION['a'] = trim($_POST['a']);
     $_SESSION['m'] = trim($_POST['m']);
@@ -82,28 +80,22 @@ if(isset($_POST['sample']))
     $sale['p'] = $_SESSION['p'];
     $sale['l'] = $_SESSION['l'];
     $sale['e'] = $_SESSION['e'];
+    print_r($sale, $regl);
 }
 if(isset($_POST['trauma']))
 {
-    $suma += 1;
     $_SESSION['natr'] = trim($_POST['natr']);
     $_SESSION['nami'] = trim($_POST['nami']);
     $medi = array();
     $medi['nami'] = $_SESSION['nami'];
     $trau = array();
     $trau['natr'] = $_SESSION['natr'];
-   
+   print_r($trau, $medi);
 }
 if(isset($_POST['end-form-add-inci']))
 {
-    if($suma == 5)
-    {
-        $inci->add($exco, $glcs, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote);
-    }
-    else
-    {
-        echo 'dupa ze wsio';
-    }
+         $inci->add($exco, $regl, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote);
+
 }
 else
 {

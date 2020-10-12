@@ -15,8 +15,11 @@
 <?php include 'templates/add-sample.php';?>
 <?php include 'templates/add-trauma.php';?>
 <?php include 'templates/add-notes.php'; ?>
-<form method="post"><input  class="save-all-bt" type="submit" value="Wyślij do bazy!" name="end-form-add-inci"></form>
+<input  class="save-all-bt" type="submit" value="Wyślij do bazy!" name="end-form-add-inci"></form>
 </div>
+<div class="inci-hist" id="hist"></div>
+<div class="inci-medi" id="medi"></div>
+<div class="inci-trauma" id="truma"></div>
 <div id="logout" class="inci-logout">
     <form method="post">
         <input type="submit" value="Wyloguj" name="logout">
