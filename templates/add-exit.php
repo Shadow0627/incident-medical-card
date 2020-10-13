@@ -1,5 +1,5 @@
+<div>
 
-<form id="exit-code" method="post">
         <h1>Dane wyjazdowe</h1>
         <label for="exco">Kod wyjazdu:</label>
         <input type="text" name="exco" id="exco" required value="<?php if(isset($_SESSION['exco'])){ echo $_SESSION['exco'];}?>">
@@ -21,5 +21,4 @@
         <input type="text" name="tona" id="tona" required value="<?php if(isset($_SESSION['tona'])){ echo $_SESSION['tona'];}?>">
         <label for="nauo">Pilność zdarzenia:</label>
         <input type="text" name="nauo" id="nauo" required value="<?php if(isset($_SESSION['nauo'])){ echo $_SESSION['nauo'];}?>">
-        <input type="submit" value="Zapisz !" name='exit'>
-</form>
+        </div>

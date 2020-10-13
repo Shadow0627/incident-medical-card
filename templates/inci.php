@@ -9,7 +9,8 @@
         <li><a href="#logout">Wyloguj</a></li>
     </ul>
 </header>
-<div id="add" class="inci-add">
+<div id="add" >
+    <form method="post" class="inci-add">
 <?php include 'templates/add-pati.php'; ?>
 <?php include 'templates/add-exit.php'; ?>
 <?php include 'templates/add-sample.php';?>
@@ -30,6 +31,18 @@
 
 
 <?php
+$medi = array();
+$exco = array();
+$loti = array();
+$tdon = array();
+$toin = array();
+$toca = array();
+$pati = array();
+$regl = array();
+$trau = array();
+$sale = array();
+$uote = array();
+$toni = array();
 if(isset($_POST['logout']))
 {
     $user->logout();

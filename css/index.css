@@ -161,7 +161,7 @@ footer {
       grid-template-columns: 50% 50%;
 }
 
-.inci-add form {
+.inci-add div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,7 +178,7 @@ footer {
           align-items: center;
 }
 
-.inci-add form input {
+.inci-add div input {
   background-color: white;
   color: black;
   border: none;
@@ -187,7 +187,7 @@ footer {
   margin-top: 2vh;
 }
 
-.inci-add form .save-all-bt {
+.inci-add div .save-all-bt {
   width: 100%;
   height: 100%;
   text-align: center;

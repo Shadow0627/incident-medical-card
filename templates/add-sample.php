@@ -1,4 +1,4 @@
-        <form id="add-sample" method="post">
+<div>
             <h1>S.A.M.P.L.E i GLASGOW</h1>
             <label for="s">S-ymptomy:</label>
             <input type="text" name="s" id="s"  required value="<?php if(isset($_SESSION['s'])){ echo $_SESSION['s'];}?>">
@@ -18,5 +18,4 @@
             <input type="text" name="voice" id="voice" required value="<?php if(isset($_SESSION['voice'])){ echo $_SESSION['voice'];}?>">
             <label for="move">Reakcja ruchowa:</label>
             <input type="text" name="move" id="move" required value="<?php if(isset($_SESSION['move'])){ echo $_SESSION['move'];}?>">
-            <input type="submit" value="Zapisz !" name="sample">
-        </form>
+            </div>
