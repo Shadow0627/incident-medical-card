@@ -32,6 +32,16 @@ class Inci
         $this->db->bind(':regl', $glcs);
         $this->db->execute();
         $sql='INSERT INTO loti(IDLO, CILO, ZCLO, STLO) VALUES (:idlo, :cilo, :zclo, :stlo)';
+        $this->db->query($sql);
+        $this->db->bind(':idlo', $id);
+        $this->db->bind(':cilo', $loti['cilo']);
+        $this->db->bind(':zclo', $loti['zclo']);
+        $this->db->bind(':stlo', $loti['stlo']);
+        $this->db->execute();
+        $sql = 'INSERT INTO medi(IDME, NAME, DEME) VALUES (:idme, :name, :deme)';
+        $this->db->query($sql);
+        $this->db->bind(':idme', $id);
+        $this->db->bind(':name', $medi['name']);
 
     }
     
