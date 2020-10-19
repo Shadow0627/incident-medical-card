@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 15 Paź 2020, 13:20
--- Wersja serwera: 10.4.14-MariaDB
--- Wersja PHP: 7.4.10
+-- Czas generowania: 20 Paź 2020, 00:03
+-- Wersja serwera: 10.4.11-MariaDB
+-- Wersja PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `exco` (
-  `IDEX` int(30) NOT NULL COMMENT 'ID EXIC CODE',
+  `IDEX` varchar(255) NOT NULL COMMENT 'ID EXIC CODE',
   `NUEX` varchar(255) NOT NULL COMMENT 'NUMBER OF EXIC CODE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `exco`
+--
+
+INSERT INTO `exco` (`IDEX`, `NUEX`) VALUES
+('exco5f8e0cb80b61d', '1'),
+('exco5f8e0cf8a0ec9', '1');
 
 -- --------------------------------------------------------
 
@@ -39,9 +47,19 @@ CREATE TABLE `exco` (
 --
 
 CREATE TABLE `glcs` (
-  `IDGL` int(30) NOT NULL COMMENT 'ID GLASGOW COMA SCALE',
-  `REGL` varchar(255) NOT NULL COMMENT 'RESULT OF GLASGOW COMA SCALE'
+  `IDGL` varchar(255) NOT NULL COMMENT 'ID GLASGOW COMA SCALE',
+  `EYGL` varchar(255) NOT NULL COMMENT 'EYE CONTACT',
+  `VOGL` varchar(255) NOT NULL COMMENT 'VOICE CONTACT',
+  `MOGL` varchar(255) NOT NULL COMMENT 'MOVE CONTACT'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `glcs`
+--
+
+INSERT INTO `glcs` (`IDGL`, `EYGL`, `VOGL`, `MOGL`) VALUES
+('glcs5f8e0cb81277e', '0', '0', '0'),
+('glcs5f8e0cf8a615b', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -50,21 +68,29 @@ CREATE TABLE `glcs` (
 --
 
 CREATE TABLE `inci` (
-  `IDIN` int(30) NOT NULL,
-  `IDMS` int(30) NOT NULL COMMENT 'ID MED STUFF',
-  `IDPA` int(30) NOT NULL COMMENT 'ID PATIENT',
-  `IDTR` int(30) NOT NULL COMMENT 'ID TRAUMA',
-  `IDTD` int(30) NOT NULL COMMENT 'ID Times and dates of the incident',
-  `IDLO` int(30) NOT NULL COMMENT 'ID LOCATION',
-  `IDNO` int(30) NOT NULL COMMENT 'ID NOTE',
-  `IDTO` int(30) NOT NULL COMMENT 'ID TYPE OFF CALL',
-  `IDUO` int(30) NOT NULL COMMENT 'ID Urgency of the event',
-  `IDTI` int(30) NOT NULL COMMENT 'ID TYPE OF INCIDENT',
-  `IDEX` int(30) NOT NULL COMMENT 'ID EXIC CODE',
-  `IDSA` int(30) NOT NULL COMMENT 'ID SAMPLE',
-  `IDGL` int(30) NOT NULL COMMENT 'ID GLASGOW SCALE',
-  `IDME` int(30) NOT NULL COMMENT 'ID MEDICINE'
+  `IDIN` int(11) NOT NULL,
+  `IDMS` varchar(255) NOT NULL COMMENT 'ID MED STUFF',
+  `IDPA` varchar(255) NOT NULL COMMENT 'ID PATIENT',
+  `IDTR` varchar(255) NOT NULL COMMENT 'ID TRAUMA',
+  `IDTD` varchar(255) NOT NULL COMMENT 'ID Times and dates of the incident',
+  `IDLO` varchar(255) NOT NULL COMMENT 'ID LOCATION',
+  `IDNO` varchar(255) NOT NULL COMMENT 'ID NOTE',
+  `IDTO` varchar(255) NOT NULL COMMENT 'ID TYPE OFF CALL',
+  `IDUO` varchar(255) NOT NULL COMMENT 'ID Urgency of the event',
+  `IDTI` varchar(255) NOT NULL COMMENT 'ID TYPE OF INCIDENT',
+  `IDEX` varchar(255) NOT NULL COMMENT 'ID EXIC CODE',
+  `IDSA` varchar(255) NOT NULL COMMENT 'ID SAMPLE',
+  `IDGL` varchar(255) NOT NULL COMMENT 'ID GLASGOW SCALE',
+  `IDME` varchar(255) NOT NULL COMMENT 'ID MEDICINE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `inci`
+--
+
+INSERT INTO `inci` (`IDIN`, `IDMS`, `IDPA`, `IDTR`, `IDTD`, `IDLO`, `IDNO`, `IDTO`, `IDUO`, `IDTI`, `IDEX`, `IDSA`, `IDGL`, `IDME`) VALUES
+(1, '1', 'pati5f8e0cb83d646', 'trau5f8e0cb83d64c', 'tdon5f8e0cb83d648', 'loti5f8e0cb83d642', 'note5f8e0cb83d644', 'toca5f8e0cb83d649', 'uote5f8e0cb83d64d', 'toni5f8e0cb83d64b', 'exco5f8e0cb83d636', 'sale5f8e0cb83d647', 'glcs5f8e0cb83d640', 'medi5f8e0cb83d643'),
+(2, '1', 'pati5f8e0cf910482', 'trau5f8e0cf91048a', 'tdon5f8e0cf910485', 'loti5f8e0cf91047f', 'note5f8e0cf910481', 'toca5f8e0cf910487', 'uote5f8e0cf91048c', 'toni5f8e0cf910489', 'exco5f8e0cf910473', 'sale5f8e0cf910484', 'glcs5f8e0cf91047d', 'medi5f8e0cf910480');
 
 -- --------------------------------------------------------
 
@@ -73,7 +99,7 @@ CREATE TABLE `inci` (
 --
 
 CREATE TABLE `logs` (
-  `IDLO` int(30) NOT NULL COMMENT 'ID LOGS',
+  `IDLO` int(11) NOT NULL COMMENT 'ID LOGS',
   `USID` int(11) NOT NULL COMMENT 'USER ID LOGS',
   `EVLO` int(11) NOT NULL COMMENT 'EVENT LOGS'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -85,11 +111,19 @@ CREATE TABLE `logs` (
 --
 
 CREATE TABLE `loti` (
-  `IDLO` int(30) NOT NULL COMMENT 'ID LOCATION OF INCIDENT',
+  `IDLO` varchar(255) NOT NULL COMMENT 'ID LOCATION OF INCIDENT',
   `CILO` varchar(128) NOT NULL COMMENT 'CITY NAME',
   `ZCLO` varchar(11) NOT NULL COMMENT 'ZIP CODE',
   `STLO` varchar(128) NOT NULL COMMENT 'STREET LOCATION'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `loti`
+--
+
+INSERT INTO `loti` (`IDLO`, `CILO`, `ZCLO`, `STLO`) VALUES
+('loti5f8e0cb81aa8c', 'szczecin', '70-203', 'Wesoła 98/1'),
+('loti5f8e0cf8aa24e', 'szczecin', '70-203', 'Wesoła 98/1');
 
 -- --------------------------------------------------------
 
@@ -98,10 +132,18 @@ CREATE TABLE `loti` (
 --
 
 CREATE TABLE `medi` (
-  `IDME` int(30) NOT NULL COMMENT 'ID MEDICAMENT',
-  `NAME` varchar(255) NOT NULL COMMENT 'NAME OF MEDICMENT',
+  `IDME` varchar(255) NOT NULL COMMENT 'ID MEDICAMENT',
+  `MENA` varchar(255) NOT NULL COMMENT 'NAME OF MEDICMENT',
   `DEME` text NOT NULL COMMENT 'DESCRIPTION MEDICAMENT'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `medi`
+--
+
+INSERT INTO `medi` (`IDME`, `MENA`, `DEME`) VALUES
+('medi5f8e0cb820c56', 'brak', ''),
+('medi5f8e0cf8ae465', 'brak', '');
 
 -- --------------------------------------------------------
 
@@ -111,7 +153,7 @@ CREATE TABLE `medi` (
 
 CREATE TABLE `mest` (
   `IDME` int(11) NOT NULL COMMENT 'ID MED STUFF',
-  `NAME` varchar(64) NOT NULL COMMENT 'NAME MED STUFF',
+  `MENA` varchar(64) NOT NULL COMMENT 'NAME MED STUFF',
   `LAME` varchar(64) NOT NULL COMMENT 'LAST NAME MED STUFF',
   `LOME` varchar(64) NOT NULL COMMENT 'LOCALISATION ME STUFF',
   `IDQU` int(11) NOT NULL COMMENT 'ID QUALIFICATION',
@@ -122,7 +164,7 @@ CREATE TABLE `mest` (
 -- Zrzut danych tabeli `mest`
 --
 
-INSERT INTO `mest` (`IDME`, `NAME`, `LAME`, `LOME`, `IDQU`, `IDUS`) VALUES
+INSERT INTO `mest` (`IDME`, `MENA`, `LAME`, `LOME`, `IDQU`, `IDUS`) VALUES
 (1, 'Piotr', 'Porwit', 'Gryfino', 1, 1);
 
 -- --------------------------------------------------------
@@ -132,9 +174,17 @@ INSERT INTO `mest` (`IDME`, `NAME`, `LAME`, `LOME`, `IDQU`, `IDUS`) VALUES
 --
 
 CREATE TABLE `note` (
-  `IDNO` int(30) NOT NULL COMMENT 'ID NOTE',
+  `IDNO` varchar(255) NOT NULL COMMENT 'ID NOTE',
   `CONO` varchar(255) NOT NULL COMMENT 'CONTENT NOTE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `note`
+--
+
+INSERT INTO `note` (`IDNO`, `CONO`) VALUES
+('note5f8e0cb822c57', 'co tu duzo mówić. zabili chuja i tyle'),
+('note5f8e0cf8b667a', 'co tu duzo mówić. zabili chuja i tyle');
 
 -- --------------------------------------------------------
 
@@ -143,7 +193,7 @@ CREATE TABLE `note` (
 --
 
 CREATE TABLE `pati` (
-  `IDPA` int(30) NOT NULL COMMENT 'ID PATIENT',
+  `IDPA` varchar(255) NOT NULL COMMENT 'ID PATIENT',
   `NAPA` varchar(32) NOT NULL COMMENT 'NAME PATIENT',
   `LAPA` varchar(32) NOT NULL COMMENT 'LASTAME PATIENT',
   `PNPA` varchar(12) NOT NULL COMMENT 'PHONE NUMBER PATIENT',
@@ -152,6 +202,14 @@ CREATE TABLE `pati` (
   `ZCPA` varchar(10) NOT NULL COMMENT 'ZIP CODE PATIENT',
   `SNPA` varchar(255) NOT NULL COMMENT 'STREET AND HOUSE NUMBER PATINT'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `pati`
+--
+
+INSERT INTO `pati` (`IDPA`, `NAPA`, `LAPA`, `PNPA`, `EMPA`, `CIPA`, `ZCPA`, `SNPA`) VALUES
+('pati5f8e0cb824d6d', 'Kacper', 'Dupny', 'brak', 'nieznay@nieznay.pl', 'Daleko', 'Brak', 'bezdomny'),
+('pati5f8e0cf8bae99', 'Kacper', 'Dupny', 'brak', 'nieznay@nieznay.pl', 'Daleko', 'Brak', 'bezdomny');
 
 -- --------------------------------------------------------
 
@@ -179,9 +237,22 @@ INSERT INTO `qual` (`IDQU`, `NAQU`) VALUES
 --
 
 CREATE TABLE `sale` (
-  `IDSA` int(30) NOT NULL COMMENT 'ID SAMPLE',
-  `RESA` varchar(255) NOT NULL COMMENT 'RESULT OF SAMPLE'
+  `IDSA` varchar(255) NOT NULL COMMENT 'ID SAMPLE',
+  `SYSA` varchar(255) NOT NULL COMMENT 'SYMPTOMS',
+  `ALSA` varchar(255) NOT NULL COMMENT 'ALERGY',
+  `MESA` varchar(255) NOT NULL COMMENT 'MEDICAMNT',
+  `PASA` varchar(255) NOT NULL COMMENT 'PAST',
+  `LASA` varchar(255) NOT NULL COMMENT 'LAUNCH',
+  `EVSA` varchar(255) NOT NULL COMMENT 'EVIDENSE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `sale`
+--
+
+INSERT INTO `sale` (`IDSA`, `SYSA`, `ALSA`, `MESA`, `PASA`, `LASA`, `EVSA`) VALUES
+('sale5f8e0cb826e02', 'brak', 'brak', 'brak', 'brak', 'brak', 'postrzal w glowe'),
+('sale5f8e0cf8bf0c1', 'brak', 'brak', 'brak', 'brak', 'brak', 'postrzal w glowe');
 
 -- --------------------------------------------------------
 
@@ -190,11 +261,19 @@ CREATE TABLE `sale` (
 --
 
 CREATE TABLE `tdon` (
-  `IDTD` int(30) NOT NULL COMMENT 'ID Times and dates of the incident',
-  `DDTD` date NOT NULL COMMENT 'DEPARTURE DATE',
-  `ARTD` date NOT NULL COMMENT 'ARRIVED TIME AND DATA',
-  `BBTD` date NOT NULL COMMENT 'BCK TO BASE TIME AND DATE'
+  `IDTD` varchar(255) NOT NULL COMMENT 'ID Times and dates of the incident',
+  `DDTD` datetime NOT NULL COMMENT 'DEPARTURE DATE',
+  `ARTD` datetime NOT NULL COMMENT 'ARRIVED TIME AND DATA',
+  `BBTD` datetime NOT NULL COMMENT 'BCK TO BASE TIME AND DATE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `tdon`
+--
+
+INSERT INTO `tdon` (`IDTD`, `DDTD`, `ARTD`, `BBTD`) VALUES
+('tdon5f8e0cb828f03', '2020-10-19 00:00:00', '2020-10-19 00:00:00', '2020-10-19 00:00:00'),
+('tdon5f8e0cf8c72e5', '2020-10-19 23:25:00', '2020-10-19 23:26:00', '2020-10-19 23:27:00');
 
 -- --------------------------------------------------------
 
@@ -203,9 +282,17 @@ CREATE TABLE `tdon` (
 --
 
 CREATE TABLE `toca` (
-  `IDTO` int(30) NOT NULL COMMENT 'ID TYPE OF CALL',
+  `IDTO` varchar(255) NOT NULL COMMENT 'ID TYPE OF CALL',
   `NATO` varchar(255) NOT NULL COMMENT 'NAME OF TYPE OF CALL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `toca`
+--
+
+INSERT INTO `toca` (`IDTO`, `NATO`) VALUES
+('toca5f8e0cb82b007', 'Pomoc spoleczna'),
+('toca5f8e0cf8cb3d8', 'Pomoc spoleczna');
 
 -- --------------------------------------------------------
 
@@ -214,9 +301,17 @@ CREATE TABLE `toca` (
 --
 
 CREATE TABLE `toin` (
-  `IDTO` int(30) NOT NULL COMMENT 'ID TYPE OF INCIDENT',
-  `TONA` varchar(255) NOT NULL COMMENT 'NAME TYPE OF INCIDENT'
+  `IDTO` varchar(255) NOT NULL COMMENT 'ID TYPE OF INCIDENT',
+  `NATO` varchar(255) NOT NULL COMMENT 'NAME TYPE OF INCIDENT'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `toin`
+--
+
+INSERT INTO `toin` (`IDTO`, `NATO`) VALUES
+('toni5f8e0cb833247', 'morderstwo'),
+('toni5f8e0cf8d9847', 'morderstwo');
 
 -- --------------------------------------------------------
 
@@ -225,10 +320,18 @@ CREATE TABLE `toin` (
 --
 
 CREATE TABLE `trau` (
-  `IDTR` int(30) NOT NULL COMMENT 'ID TRAUMA',
+  `IDTR` varchar(255) NOT NULL COMMENT 'ID TRAUMA',
   `NATR` varchar(128) NOT NULL COMMENT 'NAME TRAUMA',
   `ICTR` varchar(50) NOT NULL COMMENT 'ICD CODE TRAUMA'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `trau`
+--
+
+INSERT INTO `trau` (`IDTR`, `NATR`, `ICTR`) VALUES
+('trau5f8e0cb837358', 'postrzał w głowe', ''),
+('trau5f8e0cf8e7bf7', 'postrzał w głowe', '');
 
 -- --------------------------------------------------------
 
@@ -237,9 +340,17 @@ CREATE TABLE `trau` (
 --
 
 CREATE TABLE `uote` (
-  `IDUO` int(30) NOT NULL COMMENT 'ID Urgency of the event',
+  `IDUO` varchar(255) NOT NULL COMMENT 'ID Urgency of the event',
   `NAUO` varchar(255) NOT NULL COMMENT 'NAME OF Urgency of the event'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `uote`
+--
+
+INSERT INTO `uote` (`IDUO`, `NAUO`) VALUES
+('uote5f8e0cb83b567', 'pilne'),
+('uote5f8e0cf908120', 'pilne');
 
 -- --------------------------------------------------------
 
@@ -385,28 +496,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `glcs`
---
-ALTER TABLE `glcs`
-  MODIFY `IDGL` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID GLASGOW COMA SCALE', AUTO_INCREMENT=2147483648;
-
---
 -- AUTO_INCREMENT dla tabeli `inci`
 --
 ALTER TABLE `inci`
-  MODIFY `IDIN` int(30) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT dla tabeli `loti`
---
-ALTER TABLE `loti`
-  MODIFY `IDLO` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID LOCATION OF INCIDENT', AUTO_INCREMENT=2147483648;
-
---
--- AUTO_INCREMENT dla tabeli `medi`
---
-ALTER TABLE `medi`
-  MODIFY `IDME` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID MEDICAMENT';
+  MODIFY `IDIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `mest`
@@ -415,89 +508,16 @@ ALTER TABLE `mest`
   MODIFY `IDME` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID MED STUFF', AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT dla tabeli `note`
---
-ALTER TABLE `note`
-  MODIFY `IDNO` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID NOTE';
-
---
 -- AUTO_INCREMENT dla tabeli `qual`
 --
 ALTER TABLE `qual`
   MODIFY `IDQU` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID QUALIFICATION', AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT dla tabeli `sale`
---
-ALTER TABLE `sale`
-  MODIFY `IDSA` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID SAMPLE';
-
---
--- AUTO_INCREMENT dla tabeli `tdon`
---
-ALTER TABLE `tdon`
-  MODIFY `IDTD` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID Times and dates of the incident';
-
---
--- AUTO_INCREMENT dla tabeli `toca`
---
-ALTER TABLE `toca`
-  MODIFY `IDTO` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID TYPE OF CALL';
-
---
--- AUTO_INCREMENT dla tabeli `toin`
---
-ALTER TABLE `toin`
-  MODIFY `IDTO` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID TYPE OF INCIDENT';
-
---
--- AUTO_INCREMENT dla tabeli `trau`
---
-ALTER TABLE `trau`
-  MODIFY `IDTR` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID TRAUMA';
-
---
--- AUTO_INCREMENT dla tabeli `uote`
---
-ALTER TABLE `uote`
-  MODIFY `IDUO` int(30) NOT NULL AUTO_INCREMENT COMMENT 'ID Urgency of the event';
-
---
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
   MODIFY `IDUS` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID USER', AUTO_INCREMENT=2;
-
---
--- Ograniczenia dla zrzutów tabel
---
-
---
--- Ograniczenia dla tabeli `inci`
---
-ALTER TABLE `inci`
-  ADD CONSTRAINT `inci_ibfk_1` FOREIGN KEY (`IDMS`) REFERENCES `mest` (`IDME`),
-  ADD CONSTRAINT `inci_ibfk_10` FOREIGN KEY (`IDSA`) REFERENCES `sale` (`IDSA`),
-  ADD CONSTRAINT `inci_ibfk_11` FOREIGN KEY (`IDTD`) REFERENCES `tdon` (`IDTD`),
-  ADD CONSTRAINT `inci_ibfk_12` FOREIGN KEY (`IDTI`) REFERENCES `toin` (`IDTO`),
-  ADD CONSTRAINT `inci_ibfk_13` FOREIGN KEY (`IDTO`) REFERENCES `toca` (`IDTO`),
-  ADD CONSTRAINT `inci_ibfk_14` FOREIGN KEY (`IDTR`) REFERENCES `trau` (`IDTR`),
-  ADD CONSTRAINT `inci_ibfk_15` FOREIGN KEY (`IDUO`) REFERENCES `uote` (`IDUO`),
-  ADD CONSTRAINT `inci_ibfk_2` FOREIGN KEY (`IDPA`) REFERENCES `pati` (`IDPA`),
-  ADD CONSTRAINT `inci_ibfk_3` FOREIGN KEY (`IDEX`) REFERENCES `exco` (`IDEX`),
-  ADD CONSTRAINT `inci_ibfk_4` FOREIGN KEY (`IDGL`) REFERENCES `glcs` (`IDGL`),
-  ADD CONSTRAINT `inci_ibfk_5` FOREIGN KEY (`IDLO`) REFERENCES `loti` (`IDLO`),
-  ADD CONSTRAINT `inci_ibfk_6` FOREIGN KEY (`IDME`) REFERENCES `medi` (`IDME`),
-  ADD CONSTRAINT `inci_ibfk_7` FOREIGN KEY (`IDMS`) REFERENCES `mest` (`IDME`),
-  ADD CONSTRAINT `inci_ibfk_8` FOREIGN KEY (`IDNO`) REFERENCES `note` (`IDNO`),
-  ADD CONSTRAINT `inci_ibfk_9` FOREIGN KEY (`IDPA`) REFERENCES `pati` (`IDPA`);
-
---
--- Ograniczenia dla tabeli `mest`
---
-ALTER TABLE `mest`
-  ADD CONSTRAINT `USME` FOREIGN KEY (`IDUS`) REFERENCES `user` (`IDUS`),
-  ADD CONSTRAINT `mest_ibfk_1` FOREIGN KEY (`IDQU`) REFERENCES `qual` (`IDQU`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
