@@ -108,8 +108,11 @@ class Inci
         $this->db->bind(':idou', $id);
         $this->db->bind(':nauo', $uote['nauo']);
         $this->db->execute();
-        $sql = 'INSERT INTO inci(IDMS, IDPA, IDTR, IDTD, IDLO, IDNO, IDTO, IDUO, IDTI, IDEX, IDSA, IDGL, IDME) VALUES(:idms, :idpa, :idtr, :idtd, :idlo, :idno, :idto, :iduo, :idti, :idex, :idsa, :idgl, :idme)';
+        $sql = 'INSERT INTO inci(IDIN, IDUS, IDPA, IDTR, IDTD, IDLO, IDNO, IDTO, IDUO, IDTI, IDEX, IDSA, IDGL, IDME) VALUES(:idin, :idms, :idpa, :idtr, :idtd, :idlo, :idno, :idto, :iduo, :idti, :idex, :idsa, :idgl, :idme)';
         $this->db->query($sql);
+        $prefix = 'inci';
+        $id=uniqid($prefix);
+        $this->db->bind(':idin', $id);
         $prefix = "exco";
         $id = uniqid($prefix);
         $this->db->bind(":idex", $id);
@@ -149,6 +152,7 @@ $prefix = "uote";
         $id = $_SESSION['userId'];
         $this->db->bind(":idms", $id);
         $this->db->execute();
+        $_SESSION['error'] = "Zdarzenie dodane do bazy pomyślnie !!";
     }
     
 }
