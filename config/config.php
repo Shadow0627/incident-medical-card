@@ -8,6 +8,8 @@ define('author', 'Piotr Porwit');
 define('description', 'Special app for paramedic teams');
 define('keywords', 'sar, paramedics, zrm, porwit, ratownictwo medyczne, med stuff, med, support, helpers');
 define('year', date('Y'));
+error_reporting(E_ALL & ~E_NOTICE);
+
 
 
 

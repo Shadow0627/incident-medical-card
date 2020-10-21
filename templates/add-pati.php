@@ -7,7 +7,7 @@
         <label for="pnpa">Numer telefonu:</label>
         <input type="text" name="pnpa" id="pnpa" value="<?php if(isset($_SESSION['pnpa'])){ echo $_SESSION['pnpa'];}?>">
         <label for="empa">Email pacjenta:</label>
-        <input type="email" name="empa" id="empa" value="<?php if(isset($_SESSION['empa'])){ echo $_SESSION['empa'];}?>">
+        <input type="text" name="empa" id="empa" value="<?php if(isset($_SESSION['empa'])){ echo $_SESSION['empa'];}?>">
         <label for="cipa">Miasto: </label>
         <input type="text" name="cipa" id="cipa" value="<?php if(isset($_SESSION['cipa'])){ echo $_SESSION['cipa'];}?>" required>
         <label for="zcpa">Kod pocztowy:</label>

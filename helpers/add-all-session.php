@@ -61,10 +61,17 @@ if(isset($_POST['end-form-add-inci']))
     $medi['nami'] = $_SESSION['nami'];
     $trau['natr'] = $_SESSION['natr'];
             $inci->add($exco, $regl, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote);
-
-}
-else
-{
-
-    echo 'dupa z postem';   
+unset($_POST['end-form-add-inci']);
+unset($exco);
+unset($regl);
+unset($loti);
+unset($medi);
+unset($note);
+unset($pati);
+unset($sale);
+unset($tdon);
+unset($toca);
+unset($toin);
+unset($trau);
+unset($uote);
 }

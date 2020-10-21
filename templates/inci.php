@@ -18,7 +18,9 @@
 <?php include 'templates/add-notes.php'; ?>
 <input  class="save-all-bt" type="submit" value="Wyślij do bazy!" name="end-form-add-inci"></form>
 </div>
-<div class="inci-hist" id="hist"></div>
+<div class="inci-hist" id="hist">
+<?php include 'history.php'; ?>
+</div>
 <div class="inci-medi" id="medi"></div>
 <div class="inci-trauma" id="truma"></div>
 <div id="logout" class="inci-logout">
