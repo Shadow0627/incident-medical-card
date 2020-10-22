@@ -60,7 +60,8 @@ if(isset($_POST['end-form-add-inci']))
     $_SESSION['nami'] = trim($_POST['nami']);
     $medi['nami'] = $_SESSION['nami'];
     $trau['natr'] = $_SESSION['natr'];
-            $inci->add($exco, $regl, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote);
+            if($inci->add($exco, $regl, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote))
+            {
 unset($_POST['end-form-add-inci']);
 unset($exco);
 unset($regl);
@@ -74,4 +75,5 @@ unset($toca);
 unset($toin);
 unset($trau);
 unset($uote);
+            }
 }

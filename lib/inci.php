@@ -157,23 +157,21 @@ class Inci
                    {
                     print('Nazwisko pacjenta: '. $row['LAPA']);
                    }
-
-                   $sql = 'SELECT DDTD, BBTD FROM TDON WHERE IDTD = :id';
-                   $this->db->query($sql);
+                   $sql1 = 'SELECT DDTD, BBTD FROM tdon WHERE IDTD = :id';
+                   $this->db->query($sql1);
                    $this->db->bind('id', $array1[$i]);
-                   $results = $this->db->getresult();
-                   foreach($results as $row)
+                   $results1 = $this->db->getresult();
+                   foreach($results1 as $row1)
                    {
-                    print('Czas wyjazdu/powrotu: '. $row['DDTD']. '/'. $row['BBTD']);
+                    print('Czas wyjazdu/powrotu: '. $row1['DDTD']. '/'. $row1['BBTD']);
                    }
-                   
-                   $sql = 'SELECT CILO FROM loti WHERE IDLO = :id';
-                   $this->db->query($sql);
+                   $sql2 = 'SELECT CILO FROM loti WHERE IDLO = :id';
+                   $this->db->query($sql2);
                    $this->db->bind('id', $array2[$i]);
-                   $results = $this->db->getresult();
-                   foreach($results as $row)
+                   $results2 = $this->db->getresult();
+                   foreach($results2 as $row2)
                    {
-                    print('Miejscowość: '. $row['CILO']);
+                    print('Miejscowość: '. $row2['CILO']);
                    }
                    $i++;
 
