@@ -132,49 +132,14 @@ class Inci
     }
     public function get()
     {
-            $sql = 'SELECT * FROM inci LIMIT 5';
-            $this->db->query($sql);
-            $results = $this -> db -> resultSet();
-            $array = array();
-            $i = 0;
-            $array1 = array();
-            $array2 = array();
-            foreach($results as $row) {
-                $array[$i] = $row-> IDPA;
-                $array1[$i] = $row->IDLO;
-                $array2[$i] = $row->IDTD;
-                $i++;
-            }
-            $j = count($array);
-            $i = 0;
-             while ($i <=$j)
-             {
-                   $sql = 'SELECT LAPA FROM pati WHERE IDPA = :id';
+                   $sql = 'SELECT IDIN, LAPA, DDTD, BBTD, CILO FROM inci, pati, tdon, loti WHERE inci.IDPA = pati.IDPA AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO LIMIT 5';
                    $this->db->query($sql);
-                   $this->db->bind('id', $array[$i]);
                    $results = $this->db->getresult();
                    foreach($results as $row)
                    {
-                    print('Nazwisko pacjenta: '. $row['LAPA']);
+                    print('Nazwisko pacjenta: '. $row['LAPA'] .'<br>');
+                    print('Czas wyjazdu/powrotu: '. $row['DDTD']. '/'. $row['BBTD'] .'<br>');
+                    print('Miejscowość: '. $row['CILO'] .'<br>');
                    }
-                   $sql1 = 'SELECT DDTD, BBTD FROM tdon WHERE IDTD = :id';
-                   $this->db->query($sql1);
-                   $this->db->bind('id', $array1[$i]);
-                   $results1 = $this->db->getresult();
-                   foreach($results1 as $row1)
-                   {
-                    print('Czas wyjazdu/powrotu: '. $row1['DDTD']. '/'. $row1['BBTD']);
-                   }
-                   $sql2 = 'SELECT CILO FROM loti WHERE IDLO = :id';
-                   $this->db->query($sql2);
-                   $this->db->bind('id', $array2[$i]);
-                   $results2 = $this->db->getresult();
-                   foreach($results2 as $row2)
-                   {
-                    print('Miejscowość: '. $row2['CILO']);
-                   }
-                   $i++;
-
-            }
     }
 }
