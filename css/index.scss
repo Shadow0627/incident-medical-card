@@ -161,3 +161,17 @@ footer
     }
 }
 }
+.inci-hist
+{
+    width: 100%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 10vh;
+    border-top: $border;
+    border-bottom: $border;
+    box-shadow: $shadow;
+    background-color: $divbgcolor;
+    color: $color;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

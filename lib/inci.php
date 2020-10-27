@@ -132,7 +132,8 @@ class Inci
     }
     public function get()
     {
-                   $sql = 'SELECT IDIN, LAPA, DDTD, BBTD, CILO FROM inci, pati, tdon, loti WHERE inci.IDPA = pati.IDPA AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO LIMIT 5';
+                   $sql = 
+                   'SELECT IDIN, LAPA, DDTD, BBTD, CILO, mest.IDUS, inci.IDUS, mest.IDME, mest.MENA, mest.LAME  FROM inci, pati, tdon, loti, user, mest WHERE inci.IDPA = pati.IDPA AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO AND inci.IDUS = mest.IDUS LIMIT 5';
                    $this->db->query($sql);
                    $results = $this->db->getresult();
                    foreach($results as $row)
@@ -140,6 +141,23 @@ class Inci
                     print('Nazwisko pacjenta: '. $row['LAPA'] .'<br>');
                     print('Czas wyjazdu/powrotu: '. $row['DDTD']. '/'. $row['BBTD'] .'<br>');
                     print('Miejscowość: '. $row['CILO'] .'<br>');
+                    print('Medyk: '. $row['MENA'] .' '. $row['LAME'] .'<br>');
+                    print('<form action="history.php" method="POST"><input type="hidden" name="idin" value="'. $row['IDIN'] .'"><input type="submit" value="Zobacz więcej"></form>');
                    }
+    }
+    public function getalldata($id)
+    {
+        $sql = 'SELECT * FROM inci, exco, glcs, loti, medi, note, pati, sale, tdon, toca, toin, trau, uote, mest WHERE inci.IDPA = :id AND inci.IDEX = exco.IDEX AND inci.IDUS = mest.IDUS AND inci.IDPA = pati.IDPA AND inci.IDTR = trau.IDTR AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO AND inci.IDNO = note.IDNO AND inci.IDTO = toca.IDTO AND inci.IDUO = uote.IDUO AND inci.IDTI = toin.IDTO AND inci.IDSA =sale.IDSA AND inci.IDGL = glcs.IDGL AND inci.IDME = medi.IDME';
+        $this->db->query($sql);
+        $this->db->bind(':id', $id);
+        $results = $this->db->getresult();
+                   foreach($results as $row)
+                   {
+                    print('Nazwisko pacjenta: '. $row['LAPA'] .'<br>');
+                    print('Czas wyjazdu/powrotu: '. $row['DDTD']. '/'. $row['BBTD'] .'<br>');
+                    print('Miejscowość: '. $row['CILO'] .'<br>');
+                    print('Medyk: '. $row['MENA'] .' '. $row['LAME'] .'<br>');
+                   }
+
     }
 }

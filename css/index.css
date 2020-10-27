@@ -195,4 +195,21 @@ footer {
   border: 5px solid black;
   color: #000000;
 }
+
+.inci-hist {
+  width: 100%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  margin-top: 10vh;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  -webkit-box-shadow: 1vh 2vh 2vh black;
+          box-shadow: 1vh 2vh 2vh black;
+  background-color: #00ccff;
+  color: #000000;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
 /*# sourceMappingURL=index.css.map */
