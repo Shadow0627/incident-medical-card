@@ -147,17 +147,10 @@ class Inci
     }
     public function getalldata($id)
     {
-        $sql = 'SELECT * FROM inci, exco, glcs, loti, medi, note, pati, sale, tdon, toca, toin, trau, uote, mest WHERE inci.IDPA = :id AND inci.IDEX = exco.IDEX AND inci.IDUS = mest.IDUS AND inci.IDPA = pati.IDPA AND inci.IDTR = trau.IDTR AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO AND inci.IDNO = note.IDNO AND inci.IDTO = toca.IDTO AND inci.IDUO = uote.IDUO AND inci.IDTI = toin.IDTO AND inci.IDSA =sale.IDSA AND inci.IDGL = glcs.IDGL AND inci.IDME = medi.IDME';
+        $sql = 'SELECT * FROM inci, exco, glcs, loti, medi, note, pati, sale, tdon, toca, toin, trau, uote, mest WHERE inci.IDIN = :id AND inci.IDEX = exco.IDEX AND inci.IDUS = mest.IDUS AND inci.IDPA = pati.IDPA AND inci.IDTR = trau.IDTR AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO AND inci.IDNO = note.IDNO AND inci.IDTO = toca.IDTO AND inci.IDUO = uote.IDUO AND inci.IDTI = toin.IDTO AND inci.IDSA =sale.IDSA AND inci.IDGL = glcs.IDGL AND inci.IDME = medi.IDME';
         $this->db->query($sql);
         $this->db->bind(':id', $id);
         $results = $this->db->getresult();
-                   foreach($results as $row)
-                   {
-                    print('Nazwisko pacjenta: '. $row['LAPA'] .'<br>');
-                    print('Czas wyjazdu/powrotu: '. $row['DDTD']. '/'. $row['BBTD'] .'<br>');
-                    print('Miejscowość: '. $row['CILO'] .'<br>');
-                    print('Medyk: '. $row['MENA'] .' '. $row['LAME'] .'<br>');
-                   }
-
+        return $results;
     }
 }
