@@ -129,6 +129,7 @@ class Inci
         $this->db->bind(":idms", $id);
         $this->db->execute();
         $_SESSION['error'] = "Zdarzenie dodane do bazy pomyślnie !!";
+        header('refresh: 1');
     }
     public function get()
     {

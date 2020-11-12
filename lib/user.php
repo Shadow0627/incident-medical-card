@@ -35,6 +35,7 @@ class User
         session_unset();
         session_destroy();
         $_SESSION['error'] = 'Wylogowano!';
+        header('location: index.php');
         
     }
     public function ip($ip)

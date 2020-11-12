@@ -24,7 +24,7 @@
 <div class="inci-medi" id="medi"></div>
 <div class="inci-trauma" id="truma"></div>
 <div id="logout" class="inci-logout">
-    <form method="post">
+    <form method="post" action="/logout.php">
         <input type="submit" value="Wyloguj" name="logout">
     </form>
 </div>
@@ -45,7 +45,3 @@ $trau = array();
 $sale = array();
 $uote = array();
 $toni = array();
-if(isset($_POST['logout']))
-{
-    $user->logout();
-}
