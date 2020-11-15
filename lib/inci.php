@@ -34,10 +34,10 @@ class Inci
         $this->db->execute();
         $prefix = "medi";
         $id_medi = uniqid($prefix);
-        $sql = 'INSERT INTO medi(IDME, MENA) VALUES (:idme, :mena)';
+        $sql = 'INSERT INTO medi(IDME, medi.NAME) VALUES (:idme, :mena)';
         $this->db->query($sql);
         $this->db->bind(':idme', $id_medi);
-        $this->db->bind(':mena', $medi['nami']);
+        $this->db->bind(':mena', $medi['name']);
         $this->db->execute();
         $prefix = "note";
         $id_note = uniqid($prefix);
@@ -89,7 +89,7 @@ class Inci
         $this->db->execute();
         $prefix = "toni";
         $id_toni = uniqid($prefix);
-        $sql = 'INSERT INTO toin(IDTO, NATO) VALUES (:idto, :tono)';
+        $sql = 'INSERT INTO toin(IDTO, NOTO) VALUES (:idto, :tono)';
         $this->db->query($sql);
         $this->db->bind(':idto', $id_toni);
         $this->db->bind(':tono', $toin['tona']);
@@ -129,7 +129,7 @@ class Inci
         $this->db->bind(":idms", $id);
         $this->db->execute();
         $_SESSION['error'] = "Zdarzenie dodane do bazy pomyślnie !!";
-        header('refresh: 1');
+        header( "refresh:1, url=../index.index.php" );
     }
     public function get()
     {

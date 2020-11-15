@@ -34,6 +34,7 @@ class User
     {
         session_unset();
         session_destroy();
+        session_start();
         $_SESSION['error'] = 'Wylogowano!';
         header('location: index.php');
         

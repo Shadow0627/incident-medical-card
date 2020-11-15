@@ -1,7 +1,8 @@
 <?php
     
 if(isset($_POST['end-form-add-inci']))
-{
+{  
+    include '../config/init_copy.php';
     $_SESSION['exco'] = trim($_POST['exco']);
     $_SESSION['cilo'] = trim($_POST['cilo']);
     $_SESSION['zclo'] = trim($_POST['zclo']);
@@ -57,8 +58,8 @@ if(isset($_POST['end-form-add-inci']))
     $sale['l'] = $_SESSION['l'];
     $sale['e'] = $_SESSION['e'];
     $_SESSION['natr'] = trim($_POST['natr']);
-    $_SESSION['nami'] = trim($_POST['nami']);
-    $medi['nami'] = $_SESSION['nami'];
+    $_SESSION['name'] = trim($_POST['nami']);
+    $medi['name'] = $_SESSION['name'];
     $trau['natr'] = $_SESSION['natr'];
             if($inci->add($exco, $regl, $loti, $medi, $note, $pati, $sale, $tdon, $toca, $toin, $trau, $uote))
             {

@@ -175,3 +175,14 @@ footer
     display: grid;
     grid-template-columns: 50% 50%;
 }
+.history-sh
+{
+    width: 80%;
+    color: $color;
+    box-shadow: $shadow;
+    background-color: $divbgcolor;
+    border: $border;
+    margin-left: 10%;
+    margin-top: 10vh;
+    padding: 2%;
+}

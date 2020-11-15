@@ -10,7 +10,7 @@
     </ul>
 </header>
 <div id="add" >
-    <form method="post" class="inci-add">
+    <form method="post" action="/helpers/add-all-session.php" class="inci-add">
 <?php include 'templates/add-pati.php'; ?>
 <?php include 'templates/add-exit.php'; ?>
 <?php include 'templates/add-sample.php';?>

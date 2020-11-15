@@ -3,10 +3,12 @@
 </html>
 <script>
 $(document).ready(function(){
-    <?php 
+    <?php if(isset($_SESSION['error'])){
 print('
 alert("'. $_SESSION["error"] .'");'
 );
+unset($_SESSION['error']);
+}
 ?>
 
 })

@@ -6,7 +6,6 @@ if(isset($_SESSION['userId']) && $_SESSION['confirm'] == 'start')
     include 'templates/inci.php';
     include 'templates/footer.php';
     include 'helpers/ip.php';
-    include 'helpers/add-all-session.php';
 }
 else
 {
