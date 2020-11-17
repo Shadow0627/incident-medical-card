@@ -129,12 +129,12 @@ class Inci
         $this->db->bind(":idms", $id);
         $this->db->execute();
         $_SESSION['error'] = "Zdarzenie dodane do bazy pomyślnie !!";
-        header( "refresh:1, url=../index.index.php" );
+        return true;
     }
     public function get()
     {
                    $sql = 
-                   'SELECT IDIN, LAPA, DDTD, BBTD, CILO, mest.IDUS, inci.IDUS, mest.IDME, mest.MENA, mest.LAME  FROM inci, pati, tdon, loti, user, mest WHERE inci.IDPA = pati.IDPA AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO AND inci.IDUS = mest.IDUS LIMIT 5';
+                   'SELECT IDIN, LAPA, DDTD, BBTD, CILO, mest.IDUS, inci.IDUS, mest.IDME, mest.MENA, mest.LAME  FROM inci, pati, tdon, loti, user, mest WHERE inci.IDPA = pati.IDPA AND inci.IDTD = tdon.IDTD AND inci.IDLO = loti.IDLO AND inci.IDUS = mest.IDUS ORDER BY tdon.BBTD DESC  LIMIT 5 ';
                    $this->db->query($sql);
                    $results = $this->db->getresult();
                    foreach($results as $row)

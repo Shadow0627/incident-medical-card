@@ -76,5 +76,6 @@ unset($toca);
 unset($toin);
 unset($trau);
 unset($uote);
+header( "location: ../index.php" );
             }
 }
