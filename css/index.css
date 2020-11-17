@@ -138,7 +138,7 @@ footer {
 
 .inci-logout input {
   border: 5px solid black;
-  background-color: #ffffff;
+  background-color: red;
   color: #000000;
   font-size: larger;
   padding: 1rem;
@@ -187,7 +187,7 @@ footer {
   margin-top: 2vh;
 }
 
-.inci-add div .save-all-bt {
+.save-all-bt {
   width: 100%;
   height: 100%;
   text-align: center;
